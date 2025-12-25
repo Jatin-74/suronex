@@ -6,14 +6,27 @@
   --background-end-rgb: 0, 0, 0;
 }
 
+/* === GLOBAL SMOOTHNESS SETTINGS === */
+html {
+  scroll-behavior: smooth;
+  background: #000; /* Essential: Prevents white flashes during scroll/load */
+}
+
+/* Premium Text Selection Color */
+::selection {
+  background: #D33E9E;
+  color: white;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: black;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased; /* Makes text look sharper */
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* 1. THE GLASS EFFECT UTILITY */
-/* This makes glass visible by adding a subtle gradient and a sharp border */
 .glass-panel {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
   backdrop-filter: blur(20px);
@@ -50,7 +63,7 @@ body {
     linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
 }
 
-/* Optional: Animation to make the grid drift slowly (The "Space Station" feel) */
+/* Animation to make the grid drift slowly */
 @keyframes grid-drift {
   0% { background-position: 0 0; }
   100% { background-position: 50px 50px; }
@@ -60,12 +73,9 @@ body {
   animation: grid-drift 20s linear infinite;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-/* Optimize heavy elements */
+/* Optimize heavy elements for smoother GPU rendering */
 .optimize-gpu {
   transform: translateZ(0);
   will-change: transform, opacity;
+  backface-visibility: hidden;
 }
