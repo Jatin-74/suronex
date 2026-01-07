@@ -2,25 +2,28 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Compliance from "./components/Compliance";
 import CostOfInaction from "./components/CostOfInaction";
-import RiskMap from "./components/RiskMap"; 
-import Solution from "./components/Solution"; 
+import RiskMap from "./components/RiskMap";
+import Solution from "./components/Solution";
 import LogoTicker from "./components/LogoTicker";
 import CallToAction from "./components/CallToAction";
 import TerminalHero from "./components/TerminalHero";
 import Image from "next/image";
+import MultiCloudChallenge from "./components/MultiCloudChallenge";
+import FlowSection from "./components/FlowSection";
+import {BuiltForWorkV2} from "./components/BuiltForWorkV2";
 
 export default function Home() {
   return (
     <main className="min-h-screen selection:bg-[#D33E9E] selection:text-white flex flex-col relative overflow-hidden">
-      
+
       {/* --- LAYER 1: BLACK BASE --- */}
       <div className="fixed inset-0 bg-black z-[-10]" />
 
       {/* --- LAYER 2: THE SHIELD IMAGE --- */}
       <div className="fixed inset-0 z-[-5] pointer-events-none flex items-center justify-center">
           <div className="relative w-[300px] h-[300px] md:w-[600px] md:h-[600px]">
-            <Image 
-                src="/shield-bg.png" 
+            <Image
+                src="/shield-bg.png"
                 alt="Suronex Shield Background"
                 fill
                 className="object-contain object-center opacity-15"
@@ -39,40 +42,43 @@ export default function Home() {
       <div className="relative z-10 w-full">
          <Navbar />
          <Hero />
-        <LogoTicker />
-         <Compliance />
+         <LogoTicker />
+         {/* <Compliance /> */}
 
-         {/* ... inside src/app/page.tsx ... */}
+         {/* Don't just detect risks section */}
+         {/* <div className="text-center mt-20 mb-[-60px] relative z-20">
+           <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-4">
+             Don't just detect risks. <br />
+             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D33E9E] to-[#3530BA]">
+               Eliminate them.
+             </span>
+           </h2>
+           <p className="text-gray-400 text-sm md:text-base max-w-xl mx-auto">
+             Experience the NEX-Shield™ Active Defense engine in action below.
+           </p>
+         </div> */}
 
-<div className="text-center mt-20 mb-[-60px] relative z-20">
-  <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-4">
-    Don't just detect risks. <br />
-    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D33E9E] to-[#3530BA]">
-      Eliminate them.
-    </span>
-  </h2>
-  <p className="text-gray-400 text-sm md:text-base max-w-xl mx-auto">
-    Experience the NEX-Shield™ Active Defense engine in action below.
-  </p>
-</div>
-         <TerminalHero />
-         
-         
+         {/* <TerminalHero /> */}
+         <BuiltForWorkV2 />
+         <MultiCloudChallenge />
+         <FlowSection />
+
          {/* --- ATTACK PATH VISUALIZATION --- */}
          <div className="bg-black/40 backdrop-blur-sm border-y border-white/5 relative z-20">
-            <RiskMap /> 
+           {/* <RiskMap /> */}
          </div>
-         <CostOfInaction />
+
+         {/* <CostOfInaction /> */}
          <Solution />
-         
          <CallToAction />
-         
+
          <div className="flex items-center justify-center py-20 border-t border-white/5 bg-black/20 backdrop-blur-md">
             <p className="text-gray-600 text-sm font-medium tracking-widest uppercase">
-            © 2025 Suronex AI. All rights reserved.
+              © 2025 Suronex AI. All rights reserved.
             </p>
          </div>
       </div>
     </main>
   );
 }
+
