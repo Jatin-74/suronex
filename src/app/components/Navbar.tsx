@@ -31,7 +31,7 @@ const navlinks: Navlink[] = [
     href: "/",
     dropdown: [
       { text: "About Us", link: "/about-us" },
-      { text: "Contact Us", link: "/contact-us" }
+      { text: "Contact Us", link: "/contact" }
     ]
   },
   {
