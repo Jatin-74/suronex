@@ -136,7 +136,7 @@ export default function Navbar() {
                     "
                   >
                     <div className="p-2">
-                      {item.dropdown.map((drop, idx) => (
+                      {item.dropdown.map((drop) => (
                         <Link
                           key={drop.text}
                           href={drop.link}
@@ -156,19 +156,9 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* DESKTOP BUTTONS */}
+          {/* DESKTOP BUTTON */}
           <div className="hidden md:flex items-center gap-3">
-            <Link href="/signin">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-6 py-2.5 rounded-full text-sm font-semibold text-gray-700 border border-gray-300 hover:border-black hover:text-black transition-all duration-300"
-              >
-                Sign In
-              </motion.button>
-            </Link>
-
-            <Link href="/book-demo">
+            <Link href="/contact">
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(211,62,158,0.6)" }}
                 whileTap={{ scale: 0.95 }}
@@ -295,23 +285,10 @@ export default function Navbar() {
                   ))}
                 </div>
 
-                {/* Mobile CTA Buttons */}
-                <div className="mt-8 space-y-3">
+                {/* Mobile CTA Button */}
+                <div className="mt-8">
                   <Link
-                    href="/signin"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="
-                      block w-full px-6 py-3 rounded-full text-center
-                      text-gray-800 font-semibold border-2 border-gray-300
-                      hover:border-black hover:text-black
-                      transition-all duration-300
-                    "
-                  >
-                    Sign In
-                  </Link>
-
-                  <Link
-                    href="/book-demo"
+                    href="/contact"
                     onClick={() => setMobileMenuOpen(false)}
                     className="
                       block w-full px-6 py-3 rounded-full text-center
