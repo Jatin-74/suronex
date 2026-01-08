@@ -16,7 +16,7 @@ const socialLinks = [
   { icon: Facebook, href: "https://facebook.com/suronex", color: "#1877F2", label: "Facebook" },
   { icon: XIcon, href: "https://x.com/suronex", color: "#000000", label: "X" },
   { icon: Youtube, href: "https://youtube.com/@suronex", color: "#FF0000", label: "YouTube" },
-  { icon: Linkedin, href: "https://linkedin.com/company/suronex", color: "#0A66C2", label: "LinkedIn" },
+  { icon: Linkedin, href: "https://linkedin.com/company/suronexcloudsafe", color: "#0A66C2", label: "LinkedIn" },
 ]
 
 export default function ContactHero() {
