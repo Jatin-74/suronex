@@ -138,7 +138,7 @@ export default function CallToAction() {
                       </>
                     ) : (
                       <>
-                        <span>Join Waitlist</span>
+                        <span>Contact Us</span>
                         <ArrowRight size={18} />
                       </>
                     )}
