@@ -13,12 +13,12 @@ import {
   Share2, 
   Download, 
   CheckCircle2, 
-  ArrowRight // Added missing import
+  ArrowRight 
 } from "lucide-react";
 import Navbar from "@/app/components/Navbar";
 import { Footer } from "@/app/components/footer";
 
-// --- MOCK CONTENT (Suronex Data) ---
+
 const whitepaperContent = {
   title: "Multi-Cloud Security Redefined",
   subtitle: "Transform Compliance from Complexity to Confidence",
@@ -68,21 +68,19 @@ export default function WhitepaperDetail() {
   const params = useParams();
   const { scrollYProgress } = useScroll();
   
-  // NOTE: In a real app, use `params.slug` to fetch specific data.
-  // We are using static mock data for the demo.
 
   return (
     <div className="min-h-screen bg-[#030014] text-white selection:bg-[#D33E9E]/30 relative font-sans">
       
-      {/* READING PROGRESS BAR */}
+      
       <motion.div style={{ scaleX: scrollYProgress }} className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#D33E9E] to-[#3530BA] origin-left z-[1001]" />
 
-      {/* BACKGROUND (Static Version) */}
+    
       <div className="fixed inset-0 z-0 flex items-center justify-center pointer-events-none">
         <div className="relative w-[600px] h-[600px] opacity-20">
           <Image src="/shield-bg.png" alt="Shield" fill className="object-contain" />
         </div>
-        <div className="absolute inset-0 bg-[#030014]/90" /> {/* Darker overlay for readability */}
+        <div className="absolute inset-0 bg-[#030014]/90" /> 
       </div>
 
       <div className="relative z-10 flex flex-col min-h-screen">
@@ -91,13 +89,13 @@ export default function WhitepaperDetail() {
         <main className="flex-grow pt-32 pb-20 px-6">
           <div className="max-w-4xl mx-auto">
             
-            {/* BACK BUTTON */}
+           
             <Link href="/whitepaper" className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-8 group">
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
               Back to Library
             </Link>
 
-            {/* HEADER */}
+         
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-12">
               <div className="flex gap-3 mb-6">
                 <span className="px-3 py-1 rounded-full bg-[#D33E9E]/10 border border-[#D33E9E]/20 text-[#D33E9E] text-xs font-bold uppercase tracking-wider">
@@ -112,7 +110,7 @@ export default function WhitepaperDetail() {
               </p>
             </motion.div>
 
-            {/* METADATA BAR */}
+         
             <div className="flex flex-wrap items-center justify-between gap-6 py-6 border-y border-white/10 mb-12 text-sm text-gray-400">
               <div className="flex items-center gap-6">
                 <div className="flex items-center gap-2">
@@ -132,7 +130,7 @@ export default function WhitepaperDetail() {
               </div>
             </div>
 
-            {/* CONTENT BODY */}
+           
             <article className="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-p:text-gray-300 prose-strong:text-white prose-li:text-gray-300">
               {whitepaperContent.content.map((block, idx) => {
                 if (block.type === "intro") return <p key={idx} className="text-xl leading-relaxed text-white/90 mb-12">{block.text}</p>;
@@ -171,7 +169,7 @@ export default function WhitepaperDetail() {
               })}
             </article>
 
-            {/* BOTTOM CTA */}
+           
             <div className="mt-20 p-1 rounded-3xl bg-gradient-to-r from-[#D33E9E] to-[#3530BA]">
               <div className="bg-[#030014] rounded-[22px] p-8 md:p-12 text-center">
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">Ready to secure your multi-cloud?</h3>

@@ -8,7 +8,7 @@ import { Search, Calendar, Clock, ArrowRight, FileText, Sparkles } from "lucide-
 import Navbar from "@/app/components/Navbar";
 import { Footer } from "@/app/components/footer";
 
-// --- MOCK DATA BASED ON SURONEX CONTENT ---
+
 const whitepapers = [
   {
     id: "1",
@@ -19,7 +19,7 @@ const whitepapers = [
     author: "Suronex Research",
     publishedDate: "2025-12-19",
     readingTime: 12,
-    featuredImage: "/dashboard.png", // Using your existing asset
+    featuredImage: "/dashboard.png", 
     isFeatured: true,
   },
   {
@@ -31,7 +31,7 @@ const whitepapers = [
     author: "Suronex Team",
     publishedDate: "2025-11-15",
     readingTime: 8,
-    featuredImage: null, // Will show fallback
+    featuredImage: null, 
     isFeatured: false,
   },
   {
@@ -54,7 +54,7 @@ export default function WhitepaperListing() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 
-  // Filter Logic
+
   const filteredPapers = whitepapers.filter(paper => {
     const matchesCategory = selectedCategory === "All" || paper.category === selectedCategory;
     const matchesSearch = paper.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
@@ -68,9 +68,9 @@ export default function WhitepaperListing() {
   return (
     <div className="min-h-screen bg-[#030014] text-white selection:bg-[#D33E9E]/30 relative font-sans">
       
-      {/* 1. FIXED BACKGROUND LAYER (Matches Contact Page) */}
+     
       <div className="fixed inset-0 z-0 flex items-center justify-center pointer-events-none">
-        {/* Breathing Shield */}
+      
         <div className="relative w-[300px] h-[300px] md:w-[600px] md:h-[600px] flex items-center justify-center">
           <motion.div
             animate={{ scale: [0.8, 1.2, 0.8], opacity: [0.2, 0.5, 0.2] }}
@@ -85,7 +85,7 @@ export default function WhitepaperListing() {
             <Image src="/shield-bg.png" alt="Shield" fill className="object-contain" priority />
           </motion.div>
         </div>
-        {/* Ambient Lights */}
+      
         <div className="absolute inset-0 overflow-hidden font-sans z-[-2]">
           <motion.div 
             animate={{ x: [0, 50, 0], y: [0, -30, 0] }}
@@ -100,14 +100,14 @@ export default function WhitepaperListing() {
         </div>
       </div>
 
-      {/* 2. MAIN CONTENT */}
+  
       <div className="relative z-10 flex flex-col min-h-screen">
         <Navbar />
 
         <main className="flex-grow pt-32 md:pt-48 pb-20 px-6">
           <div className="max-w-7xl mx-auto">
             
-            {/* HERO HEADER */}
+      
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -127,11 +127,11 @@ export default function WhitepaperListing() {
               </p>
             </motion.div>
 
-            {/* SEARCH & FILTER BAR (Glassmorphic) */}
+            
             <div className="sticky top-24 z-40 mb-16">
               <div className="rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-xl p-4 flex flex-col md:flex-row gap-4 justify-between items-center shadow-2xl">
                 
-                {/* Search */}
+              
                 <div className="relative w-full md:w-96">
                   <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                   <input 
@@ -143,7 +143,7 @@ export default function WhitepaperListing() {
                   />
                 </div>
 
-                {/* Categories */}
+             
                 <div className="flex gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-hide">
                   {categories.map((cat) => (
                     <button
@@ -162,7 +162,7 @@ export default function WhitepaperListing() {
               </div>
             </div>
 
-            {/* FEATURED POST */}
+        
             {featuredPaper && !searchQuery && selectedCategory === "All" && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -204,7 +204,7 @@ export default function WhitepaperListing() {
               </motion.div>
             )}
 
-            {/* PAPER GRID */}
+            
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {regularPapers.map((paper, idx) => (
                 <motion.div
@@ -252,7 +252,7 @@ export default function WhitepaperListing() {
           </div>
         </main>
         
-        {/* FOOTER */}
+      
         <div className="relative w-full border-t border-white/10 bg-[#030014]/60 backdrop-blur-xl [&_footer]:!bg-transparent [&_section]:!bg-transparent [&_div]:!bg-transparent">
           <Footer />
         </div>
